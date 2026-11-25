@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>굿즈샵 - 로그인 / 회원가입</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <div class="card auth-box">
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" id="tab-login" class="active" aria-selected="true">로그인</button>
+        <button type="button" role="tab" id="tab-signup" aria-selected="false">회원가입</button>
+      </div>
+
+      <form id="auth-form" novalidate>
+        <label for="email">이메일</label>
+        <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+
+        <label for="password">비밀번호</label>
+        <input id="password" type="password" autocomplete="current-password" placeholder="6자 이상" required minlength="6">
+
+        <div id="confirm-wrap" class="hidden">
+          <label for="password2">비밀번호 확인</label>
+          <input id="password2" type="password" autocomplete="new-password" placeholder="비밀번호를 한 번 더">
+          <p class="hint">이메일 인증 없이 바로 가입됩니다.</p>
+        </div>
+
+        <button id="submit-btn" class="btn btn-block" type="submit">로그인</button>
+        <p id="auth-msg" class="msg hidden"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer>테스트용 쇼핑몰입니다. 실제 결제가 일어나지 않습니다.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/pages/login.js"></script>
+</body>
+</html>

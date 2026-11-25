@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>굿즈샵 - 장바구니</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <h1>장바구니</h1>
+    <p class="sub">수량을 확인하고 주문하기를 눌러주세요.</p>
+
+    <div id="cart-empty" class="empty card hidden">
+      <h2>장바구니가 비어 있어요</h2>
+      <p>마음에 드는 굿즈를 담아보세요.</p>
+      <a class="btn" href="index.html">상품 보러 가기</a>
+    </div>
+
+    <div id="cart-content" class="layout-2col hidden">
+      <div id="cart-list" class="cart-list"></div>
+      <aside class="card">
+        <h2>주문 요약</h2>
+        <div class="summary-row"><span>상품 수</span><span id="sum-count">0개</span></div>
+        <div class="summary-row"><span>배송비</span><span>무료</span></div>
+        <div class="summary-row summary-total"><span>총 결제금액</span><span id="sum-total">0원</span></div>
+        <button id="order-btn" class="btn btn-block" type="button" style="margin-top:16px">주문하기</button>
+        <p id="order-msg" class="msg msg-error hidden"></p>
+        <p class="note">최종 금액은 주문 시 서버에서 상품 가격으로 다시 계산됩니다.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer>테스트용 쇼핑몰입니다. 실제 결제가 일어나지 않습니다.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/pages/cart.js"></script>
+</body>
+</html>

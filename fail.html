@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>굿즈샵 - 결제 실패</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <div class="card result-box">
+      <div class="result-icon">😢</div>
+      <h1>결제가 완료되지 않았어요</h1>
+      <p class="sub" id="fail-message">결제가 취소되었거나 실패했습니다.</p>
+      <p class="note" id="fail-code"></p>
+      <div class="result-actions">
+        <a class="btn" href="cart.html">장바구니로 돌아가기</a>
+        <a class="btn btn-outline" href="index.html">상품 보러 가기</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>테스트용 쇼핑몰입니다. 실제 결제가 일어나지 않습니다.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/pages/fail.js"></script>
+</body>
+</html>

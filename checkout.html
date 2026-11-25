@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>굿즈샵 - 결제</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <div class="checkout-box">
+      <h1>결제하기</h1>
+      <p class="sub">결제 수단을 고르고 결제하기를 눌러주세요.</p>
+
+      <div class="test-banner">
+        🧪 <b>테스트 모드</b>입니다. 실제로 돈이 빠져나가지 않아요.
+      </div>
+
+      <div id="checkout-loading" class="loading">주문 정보를 불러오는 중…</div>
+      <p id="checkout-error" class="msg msg-error hidden"></p>
+
+      <div id="checkout-content" class="card hidden">
+        <div class="order-summary">
+          <div>
+            <p class="title" id="order-name" style="font-weight:700;margin:0"></p>
+            <p class="meta" id="order-id" style="color:var(--muted);font-size:.82rem;margin:0"></p>
+          </div>
+          <div class="amount" id="order-amount"></div>
+        </div>
+        <div id="payment-method"></div>
+        <div id="agreement"></div>
+        <button id="pay-btn" class="btn btn-block" type="button" disabled style="margin-top:12px">결제하기</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>테스트용 쇼핑몰입니다. 실제 결제가 일어나지 않습니다.</footer>
+
+  <script src="https://js.tosspayments.com/v2/standard"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/pages/checkout.js"></script>
+</body>
+</html>
