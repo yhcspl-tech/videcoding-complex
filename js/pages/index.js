@@ -28,7 +28,7 @@
           <h3 class="product-name">${App.escapeHtml(p.name)}</h3>
           <p class="product-desc">${App.escapeHtml(p.description)}</p>
           <p class="product-price">${App.won(p.price)}</p>
-          <button class="btn btn-block" type="button" data-id="${p.id}">장바구니 담기</button>
+          <button class="btn btn-outline btn-block" type="button" data-id="${p.id}">장바구니 담기</button>
         </div>
       </article>`
     )

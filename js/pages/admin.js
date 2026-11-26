@@ -56,7 +56,7 @@
           .map(
             (o) => `
           <tr>
-            <td style="white-space:nowrap">${App.formatDate(o.approved_at || o.created_at)}</td>
+            <td class="nowrap">${App.formatDate(o.approved_at || o.created_at)}</td>
             <td>${App.escapeHtml(o.user_email)}</td>
             <td>
               ${App.escapeHtml(o.order_name)}

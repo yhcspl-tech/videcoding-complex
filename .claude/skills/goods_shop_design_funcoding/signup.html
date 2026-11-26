@@ -1,0 +1,53 @@
+<!doctype html>
+<!--
+  굿즈샵 페이지 기본 틀 (goods_shop_design_funcoding 스킬)
+  새 페이지는 이 파일을 사이트 루트 폴더에 복사해서 시작한다.
+    1) 파일 이름을 바꾼다 (예: mypage.html)
+    2) <title> 의 "(페이지 이름)" 을 바꾼다
+    3) <main> 안에 본문을 채운다
+    4) 맨 아래 페이지 전용 스크립트 줄의 주석을 풀고 파일 이름을 맞춘다
+  헤더(로고 / 메뉴 / 로그인 상태)는 js/auth.js 가 자동으로 그린다. 직접 만들지 않는다.
+  푸터의 ( ) 안 값은 실제 회사 정보로 바꾼다.
+-->
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>굿즈샵 - (페이지 이름)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 공통 헤더: 로고 / 메뉴 / 로그인 상태 (js/auth.js 의 renderHeader 가 채움) -->
+  <header id="site-header"></header>
+
+  <!-- 본문 영역: 비워 둠. 이 페이지의 내용을 여기에 넣는다 -->
+  <main>
+  </main>
+
+  <!-- 공통 푸터: 회사 정보 / 약관 링크 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-links" aria-label="약관">
+        <a href="terms.html">이용약관</a>
+        <a href="privacy.html"><b>개인정보처리방침</b></a>
+      </nav>
+      <address class="footer-company">
+        <b>굿즈샵</b><br>
+        상호 (회사명) · 대표 (대표자 이름) · 사업자등록번호 (000-00-00000)<br>
+        주소 (회사 주소)<br>
+        고객센터 (전화번호) · 이메일 (고객센터 이메일)
+      </address>
+      <p class="footer-note">테스트용 쇼핑몰이에요. 실제로 결제되지 않아요.</p>
+    </div>
+  </footer>
+
+  <!-- 공통 스크립트: 이 순서 그대로 둔다 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <!-- 페이지 전용 스크립트 (필요할 때 주석을 풀고 이름을 맞춘다) -->
+  <!-- <script src="js/pages/(페이지 이름).js"></script> -->
+</body>
+</html>

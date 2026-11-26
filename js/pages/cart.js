@@ -33,7 +33,7 @@
               <button type="button" data-act="inc" aria-label="수량 더하기">+</button>
             </div>
             <span class="line-total">${App.won(i.price * i.quantity)}</span>
-            <button type="button" class="remove" data-act="remove">삭제</button>
+            <button type="button" class="btn btn-danger btn-sm" data-act="remove">삭제</button>
           </div>
         </div>`
       )
