@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}</style>
+<title>윤서진 브랜드매니저 이력서</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700;800&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<style>
+/* Layout: 왼쪽 정렬 한 단. 첫 화면은 이름과 담당 브랜드의 처방액 곡선, 그 아래는 조용한 문서 */
+:root {
+  --paper: #f5f7f4;      /* 살짝 초록빛 도는 진료실 종이 */
+  --surface: #ffffff;
+  --ink: #17251f;        /* 본문 글자 */
+  --muted: #56655f;      /* 보조 글자 */
+  --rule: #d8dfda;       /* 구분선 */
+  --accent: #0b7a62;     /* 필름코팅정 같은 깊은 청록 */
+  --accent-soft: #dcefe8;
+  --display: "Hahmlet", "Nanum Myeongjo", "AppleMyungjo", serif;
+  --body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1513; --surface: #161e1b; --ink: #e4ebe7; --muted: #9aaba4;
+    --rule: #2a3631; --accent: #4cc3a3; --accent-soft: #173a31; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1513; --surface: #161e1b; --ink: #e4ebe7; --muted: #9aaba4;
+  --rule: #2a3631; --accent: #4cc3a3; --accent-soft: #173a31; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.sample-note {
+  font-size: .875rem;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-block: 10px;
+}
+
+/* ---------- 첫 화면 ---------- */
+.hero { padding-block: 56px 48px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 48px; align-items: end; }
+.role { color: var(--accent); font-weight: 600; font-size: 1rem; }
+.name { font-size: clamp(3rem, 8vw, 5.25rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.04em; margin-top: 10px; }
+.thesis { font-size: 1.1875rem; line-height: 1.65; margin-top: 22px; max-width: 30em; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 22px; color: var(--muted); font-size: .9375rem; padding: 0; list-style: none; }
+.facts b { color: var(--ink); font-weight: 600; }
+
+.chart-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 22px 22px 18px; min-width: 0; }
+.chart-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.chart-title { font-weight: 600; font-size: 1rem; }
+.chart-source { color: var(--muted); font-size: .8125rem; }
+.chart-big { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.chart-big strong { font-family: var(--display); font-size: 2.25rem; font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.chart-big span { color: var(--accent); font-weight: 600; font-size: .9375rem; }
+svg.plc { display: block; width: 100%; height: auto; margin-top: 10px; overflow: visible; }
+.plc .grid line { stroke: var(--rule); stroke-width: 1; }
+.plc .axis text { fill: var(--muted); font-family: var(--body); font-size: 20px; font-variant-numeric: tabular-nums; }
+.plc .area { fill: var(--accent-soft); }
+.plc .line { fill: none; stroke: var(--accent); stroke-width: 3.5; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 1000; stroke-dashoffset: 0; animation: draw 1.4s ease-out both; }
+.plc .ms line { stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 4 5; }
+.plc .ms circle { fill: var(--surface); stroke: var(--ink); stroke-width: 2; }
+.plc .ms text { fill: var(--ink); font-family: var(--body); font-size: 15px; font-weight: 600; text-anchor: middle; }
+.plc .end { fill: var(--accent); }
+@keyframes draw { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) { .plc .line { animation: none; } }
+.milestones { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 6px; font-size: .9375rem; }
+.milestones li { display: grid; grid-template-columns: 26px 72px 1fr; align-items: baseline; }
+.milestones .k { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--ink); font-size: .75rem; font-weight: 600; line-height: 1; }
+.milestones time { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* ---------- 본문 섹션 ---------- */
+section.block { border-top: 1px solid var(--rule); padding-block: 44px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; }
+section.block > h2 { font-size: 1.375rem; font-weight: 700; letter-spacing: -0.02em; }
+.lead { font-size: 1.0625rem; max-width: 40em; }
+.lead + .lead { margin-top: 12px; }
+
+.wins { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.wins .num { font-family: var(--display); font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; color: var(--ink); line-height: 1.2; }
+.wins .num small { font-size: 1rem; font-weight: 700; margin-left: 2px; }
+.wins p { color: var(--muted); font-size: .9375rem; margin-top: 6px; }
+
+.jobs { display: grid; gap: 40px; }
+.job { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; }
+.job .period { color: var(--muted); font-size: .9375rem; font-variant-numeric: tabular-nums; padding-top: 3px; }
+.job h3 { font-size: 1.1875rem; font-weight: 700; letter-spacing: -0.01em; }
+.job .org { color: var(--muted); font-size: .9375rem; margin-top: 2px; }
+.job ul { margin: 12px 0 0; padding-left: 1.1em; display: grid; gap: 6px; max-width: 44em; }
+.job li::marker { color: var(--accent); }
+.job li b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.job + .job { border-top: 1px dashed var(--rule); padding-top: 40px; }
+
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; }
+.skills h3 { font-family: var(--body); font-size: 1rem; font-weight: 600; }
+.skills p { color: var(--muted); font-size: .9375rem; margin-top: 4px; }
+
+.edu { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.edu li { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; }
+.edu time { color: var(--muted); font-size: .9375rem; font-variant-numeric: tabular-nums; }
+
+.contact { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; }
+.contact .item { display: flex; align-items: center; gap: 10px; }
+.contact .label { color: var(--muted); font-size: .9375rem; }
+.contact .value { font-weight: 600; user-select: all; font-variant-numeric: tabular-nums; }
+.copy {
+  font: inherit; font-size: .875rem; font-weight: 600;
+  min-height: 36px; padding: 6px 12px;
+  border: 1px solid var(--rule); border-radius: 999px;
+  background: var(--surface); color: var(--ink); cursor: pointer;
+}
+.copy:hover { border-color: var(--accent); color: var(--accent); }
+
+footer { border-top: 1px solid var(--rule); padding-block: 24px 48px; color: var(--muted); font-size: .875rem; }
+
+/* ---------- 좁은 화면 ---------- */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 36px; padding-block: 36px 40px; }
+  section.block { grid-template-columns: minmax(0, 1fr); gap: 18px; padding-block: 36px; }
+  .wins { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .skills { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .job, .edu li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .chart-card { padding: 18px 16px 14px; }
+  .thesis { font-size: 1.0625rem; }
+}
+</style>
+
+<div class="wrap">
+  <p class="sample-note">예시용 가상 이력서예요. 인물, 회사, 제품, 수치는 모두 만들어 낸 것이에요.</p>
+
+  <header class="hero">
+    <div>
+      <p class="role">제약 마케팅 시니어 브랜드매니저</p>
+      <h1 class="name">윤서진</h1>
+      <p class="thesis">순환기 복합제 한 브랜드를 7년 동안 맡아 원외처방액을 3.5배로 키웠습니다. 영업 현장에서 시작해 도입 신약 런칭과 성숙기 브랜드 확장까지, 제품 수명주기의 모든 단계를 직접 운영했습니다.</p>
+      <ul class="facts">
+        <li><b>경력</b> 13년 6개월</li>
+        <li><b>치료 영역</b> 순환기 · 대사질환</li>
+        <li><b>근무지</b> 서울</li>
+      </ul>
+    </div>
+
+    <figure class="chart-card" style="margin:0">
+      <div class="chart-head">
+        <span class="chart-title">담당 브랜드 아테론정 원외처방액</span>
+        <span class="chart-source">단위 억 원, 연간</span>
+      </div>
+      <div class="chart-big"><strong>318억</strong><span>2019년 92억에서 3.5배</span></div>
+      <svg class="plc" viewBox="0 0 560 270" role="img" aria-label="아테론정 원외처방액: 2019년 92억, 2020년 121억, 2021년 158억, 2022년 214억, 2023년 251억, 2024년 289억, 2025년 318억">
+        <g class="grid">
+          <line x1="52" x2="540" y1="230" y2="230"/>
+          <line x1="52" x2="540" y1="167.1" y2="167.1"/>
+          <line x1="52" x2="540" y1="104.3" y2="104.3"/>
+          <line x1="52" x2="540" y1="41.4" y2="41.4"/>
+        </g>
+        <g class="axis">
+          <text x="44" y="236" text-anchor="end">0</text>
+          <text x="44" y="173" text-anchor="end">100</text>
+          <text x="44" y="110" text-anchor="end">200</text>
+          <text x="44" y="47" text-anchor="end">300</text>
+          <text x="60" y="262" text-anchor="middle">2019</text>
+          <text x="217" y="262" text-anchor="middle">2021</text>
+          <text x="374" y="262" text-anchor="middle">2023</text>
+          <text x="530" y="262" text-anchor="middle">2025</text>
+        </g>
+        <polygon class="area" points="60,230 60,172.2 138.3,153.9 216.7,130.7 295,95.5 373.3,72.2 451.7,48.3 530,30.1 530,230"/>
+        <g class="ms">
+          <line x1="117" x2="117" y1="230" y2="20"/>
+          <line x1="311" x2="311" y1="230" y2="20"/>
+          <line x1="451.7" x2="451.7" y1="230" y2="20"/>
+        </g>
+        <polyline class="line" points="60,172.2 138.3,153.9 216.7,130.7 295,95.5 373.3,72.2 451.7,48.3 530,30.1"/>
+        <g class="ms">
+          <circle cx="117" cy="14" r="11"/><text x="117" y="19">1</text>
+          <circle cx="311" cy="14" r="11"/><text x="311" y="19">2</text>
+          <circle cx="451.7" cy="14" r="11"/><text x="451.7" y="19">3</text>
+        </g>
+        <circle class="end" cx="530" cy="30.1" r="6"/>
+      </svg>
+      <ol class="milestones">
+        <li><span class="k">1</span><time datetime="2020-09">2020.09</time><span>의사 대상 디지털 디테일링 채널 도입</span></li>
+        <li><span class="k">2</span><time datetime="2022-03">2022.03</time><span>고용량 제형 추가로 라인 확장</span></li>
+        <li><span class="k">3</span><time datetime="2024-01">2024.01</time><span>진료지침 개정에 맞춘 전환 캠페인</span></li>
+      </ol>
+    </figure>
+  </header>
+
+  <section class="block" aria-labelledby="h-about">
+    <h2 id="h-about">소개</h2>
+    <div>
+      <p class="lead">브랜드 전략은 처방 현장에서 검증된다고 믿습니다. 3년간 종합병원 영업을 하며 의사가 실제로 무엇을 근거로 처방을 바꾸는지 배웠고, 그 경험을 바탕으로 데이터와 학술 근거가 맞물리는 브랜드 플랜을 세웁니다.</p>
+      <p class="lead">메디컬, 영업, 약가, 컴플라이언스 부서와 함께 일하는 것이 브랜드매니저의 본업이라고 생각합니다. 공정경쟁규약 안에서 효과를 내는 프로그램을 설계하는 데 강점이 있습니다.</p>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-wins">
+    <h2 id="h-wins">핵심 성과</h2>
+    <ul class="wins">
+      <li><div class="num">4.1→9.6<small>%</small></div><p>이상지질혈증 복합제 시장 점유율, 2019년부터 2025년까지</p></li>
+      <li><div class="num">41<small>억</small></div><p>도입 신약 글루센타정 런칭 첫해 원외처방액, 목표 대비 117%</p></li>
+      <li><div class="num">6,200<small>명</small></div><p>직접 기획한 디지털 디테일링 채널의 의사 회원 수</p></li>
+    </ul>
+  </section>
+
+  <section class="block" aria-labelledby="h-career">
+    <h2 id="h-career">경력</h2>
+    <div class="jobs">
+      <article class="job">
+        <p class="period">2019.03 – 현재</p>
+        <div>
+          <h3>시니어 브랜드매니저</h3>
+          <p class="org">로엘제약 마케팅본부 순환기 사업부 · 2023년 시니어 승진</p>
+          <ul>
+            <li>이상지질혈증 복합제 아테론정의 연간 브랜드 플랜, 예산 <b>38억</b>, 성과 관리 총괄</li>
+            <li>원외처방액 <b>92억 → 318억</b>, 같은 기간 시장 성장률의 2.4배</li>
+            <li>고용량 제형 추가 프로젝트를 이끌어 허가부터 출시까지 <b>14개월</b>에 완료</li>
+            <li>순환기 KOL 자문단 <b>24명</b> 운영, 연 2회 전국 심포지엄과 지역 좌담회 <b>60여 회</b> 기획</li>
+            <li>진료지침 개정 시점에 맞춘 전환 캠페인으로 신규 처방처 <b>1,900곳</b> 확보</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <p class="period">2015.01 – 2019.02</p>
+        <div>
+          <h3>프로덕트 매니저</h3>
+          <p class="org">가람파마 마케팅부 대사질환팀</p>
+          <ul>
+            <li>해외 도입 당뇨 신약 글루센타정 런칭 담당, 급여 등재 자료 준비와 약가 협상 지원</li>
+            <li>런칭 첫해 원외처방액 <b>41억</b>, 목표 대비 <b>117%</b> 달성</li>
+            <li>영업사원 디테일링 자료와 교육 과정을 설계해 전국 <b>180명</b>에게 운영</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <p class="period">2012.07 – 2014.12</p>
+        <div>
+          <h3>영업 담당 (MR)</h3>
+          <p class="org">가람파마 병원영업부 · 서울 종합병원 담당</p>
+          <ul>
+            <li>종합병원 <b>9곳</b>의 순환기내과와 내분비내과 담당</li>
+            <li>3년 평균 실적 달성률 <b>112%</b>, 2014년 사내 영업 우수상</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-skills">
+    <h2 id="h-skills">역량</h2>
+    <div class="skills">
+      <div><h3>브랜드 전략</h3><p>제품 수명주기별 브랜드 플랜, 포지셔닝, 라인 확장, 경쟁 제품 대응</p></div>
+      <div><h3>시장 데이터 분석</h3><p>원외처방 데이터와 처방처 세분화로 타깃 선정, 캠페인 성과 측정</p></div>
+      <div><h3>학술 마케팅</h3><p>KOL 관계 관리, 심포지엄과 좌담회 기획, 메디컬 부서와 근거 자료 개발</p></div>
+      <div><h3>컴플라이언스</h3><p>공정경쟁규약과 사내 CP 기준에 맞는 프로모션 설계와 사전 심의 대응</p></div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-edu">
+    <h2 id="h-edu">학력과 자격</h2>
+    <ul class="edu">
+      <li><time>2018</time><span>경영전문대학원 MBA, 마케팅 전공 (주말 과정)</span></li>
+      <li><time>2012</time><span>생명공학과 학사</span></li>
+      <li><time>2024</time><span>제약 공정경쟁규약 심화 교육 이수</span></li>
+      <li><time>2021</time><span>영어 회화 OPIc IH</span></li>
+    </ul>
+  </section>
+
+  <section class="block" aria-labelledby="h-contact">
+    <h2 id="h-contact">연락처</h2>
+    <div class="contact">
+      <div class="item"><span class="label">이메일</span><span class="value" id="c-email">seojin.yoon@example.com</span><button class="copy" type="button" data-copy="c-email">복사</button></div>
+      <div class="item"><span class="label">전화</span><span class="value" id="c-phone">010-0000-0000</span><button class="copy" type="button" data-copy="c-phone">복사</button></div>
+    </div>
+  </section>
+
+  <footer>예시용 가상 이력서예요. 로엘제약, 가람파마, 아테론정, 글루센타정은 실제 회사나 제품이 아니에요.</footer>
+</div>
+
+<script>
+document.querySelectorAll(".copy").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var el = document.getElementById(btn.dataset.copy);
+    var text = el.textContent.trim();
+    function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = "복사"; }, 1600); }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      done("선택됨");
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done("복사했어요"); }, fallback);
+    } else { fallback(); }
+  });
+});
+</script>
+
+</html>
